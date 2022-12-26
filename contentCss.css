@@ -1,0 +1,38 @@
+.bbtn {
+    background-color: black;
+}
+
+.xtIcon {
+    font-size: 12px;
+    border: 2px solid white;
+    border-radius: 24px;
+    width: 100px;
+}
+
+.xtValid {
+    color: white;
+    background: linear-gradient(to  right , navy , cyan 80%);
+}
+
+.xtInvalid {
+    color: black;
+    background: linear-gradient(to  right , orange , yellow 85%);
+}
+.xtRedirLI {
+    color: white;
+    background: navy;
+}
+.xtRunBtn {
+    font-size: 14px;
+    color: white;
+    background: linear-gradient(to  left , pink , purple 25%, cyan 98%);
+    border: 2px solid white;
+    border-radius: 24px;
+    width: 150px;
+
+}
+
+.xtValidHR {
+    color: white;
+    background: linear-gradient(to  right , rgb(150, 39, 175) , rgb(32, 8, 156) 80%);
+}

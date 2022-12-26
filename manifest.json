@@ -1,0 +1,70 @@
+{
+    "name": "HelperOI",
+    "version": "0.1.0",
+    "description": "Tools to reduce human errors & increase efficiency for business development specialist",
+    "permissions": ["tabs"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": 
+    [{
+      "run_at": "document_end",
+      "css": [
+        "contentCss.css"
+      ],
+      "js": [
+        "contentScript_Ext.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+      {
+      "run_at": "document_end",
+      "css": [
+        "contentCss.css"
+      ],
+      "js": [
+        "contentScript_Search.js"
+      ],
+      "matches": [
+        "https://www.linkedin.com/jobs/search/*"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "css": [
+        "contentCss.css"
+      ],
+      "js": [
+        "contentScript_PullHR.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }],
+    "web_accessible_resources": [
+      {
+        "matches": ["<all_urls>"]
+      },
+      {
+        "resources": [
+          "assets/"
+        ],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/ext-icon.png",
+        "24": "assets/ext-icon.png",
+        "32": "assets/ext-icon.png"
+      },
+      "default_title": "HelperOI",
+      "default_popup": "popup.html"
+    },
+    
+    "manifest_version": 3
+    
+}

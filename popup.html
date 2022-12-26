@@ -1,0 +1,193 @@
+<head>
+      <script src="./papaparse.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=MyFont" rel="stylesheet">
+      <link rel="stylesheet" href="popup.css" />
+      <script src="./popupScript.js"></script>
+    </head>
+    
+    <body>
+      <div class="title row2">
+        <img src="assets/extnicon.png" class="icon3">
+        <h1>HelperOI</h1>
+      </div>
+        
+        <div style="width: 350px;  height: 250px;">
+          <button class="tablink" id="defaultOpen">Filter</button>
+          <button class="tablink">Notes</button>
+          <button class="tablink">Scrapper</button>
+          <button class="tablink">User</button>
+
+          <div id="Filter" class="tabcontent fadeIn"> 
+            <h3 class="mid"><b>Loaded File: </b></h3>
+              <form class="row">
+                <button class="loadBtn"></button>
+                <div class="loadWrp">
+                  <p id="fileDisplay2">...</p>
+                  <select id="fileSlct"></select>
+                </div>
+                <input type="submit" class="loadBtn3" value="Load"> 
+              </form>  
+            <div class="frame">
+              <img src="assets/Sample.png" class="imgSample">
+              <div class="tab">
+                <h2><b>LinkedIn Filter+</b></h2>
+                <p>Filters out on boarded & blacklisted companies in LinkedIn</p>
+                <p><b>Usage: </b>click "Run" while on linkedin job search page</p>
+                <button class="bbtn" id="upload">Run</button>
+              </div>
+            </div>
+
+            <div class="frame">
+              <img src="assets/Sample2.png" class="imgSample3">
+              <div class="tab">
+                <h2>External Website Filter+</h2>
+                <p>Filters out companies in other websites</p>
+                <p><b>Usage: </b>Enter a random company name you find on the job website you are in, and then click "Apply"</p>
+                <p><b>Notice: </b>May not work as intended on some websites</p>
+                <form id="form">
+                    <div class="row">
+                      <div class="btnWrp">
+                        <img src="assets/compicon.png" class="icon">
+                        <input type="text" placeholder="Company Name" class ="inputForm" id="extWebInput" autocomplete="off">
+                      </div>
+                      <input type="submit" class="submitForm" id="extWebSubmit" value="Apply">
+                    </div>
+                </form>
+              </div>
+            </div>  
+            <div class="buffer"></div>
+          </div>
+          
+          <div id="Notes" class="tabcontent fadeIn">
+            <div class="frame2">
+              <div class="tabheader"><h2>Notes When Approaching Clients</h2></div>
+              <button class="noteMenu">Initial Contact</button>
+              <button class="clickedMenu expandBtn">Initial Contact</button>
+                <div class="noteContent">
+                  <ul class="no-bullets">
+                    <div>
+                      Hello XXX!, I noticed XXX has open tech position in Vietnam. Do you mind if I post your job openings on our
+                      platform?
+                       We have +100K engineers from all around the world using our app, and you'll receive candidates
+                      CVs through your email. It's also free for now!
+                    </div>
+                    <button class="cpyBtn" ><img src="/assets/cpyicon.png" class="btnIcon"></button>
+                  </ul>
+                </div>
+              <button class="noteMenu">Client's Interested</button>
+              <button class="clickedMenu">Client's Interested</button>
+                <div class="noteContent">
+                  <ul class="no-bullets">
+                    <div>
+                      Hi XXX, glad you're interested. If you wish to proceed, you may send me HR's work email so that we can
+                      relay candidates' CVs later on, please. :)
+                    </div>
+                    <button class="cpyBtn" ><img src="/assets/cpyicon.png" class="btnIcon"></button>
+                  </ul>
+                </div>
+              <button class="noteMenu">Follow Ups</button>
+              <button class="clickedMenu">Follow Ups</button>
+                <div class="noteContent">
+                  <ul class="no-bullets">
+                    <div>
+                      Thanks! To clarify, we're offering 2 free job posts, 1 for experienced position (min 1 year) & 1 for fresher / intern role.
+                      you can send to me the link to the job if its online or I can also pick a couple from your company's LinkedIn
+                      page if you don't mind
+                    </div>
+                    <button class="cpyBtn" ><img src="/assets/cpyicon.png" class="btnIcon"></button>
+                  </ul>
+                </div>
+            </div>
+            <div class="buffer"></div>
+          </div>
+          
+          <div id="Scrapper" class="tabcontent fadeIn">
+            <div class="frame">
+              <img src="assets/pullHR.png" class="imgSample2">
+              <div class="tab">
+                <h2>HR Puller</h2>
+                <p>Sift through displayed list of employee, tagging employees who met the criteria and hidding ones that don't</p>
+                <h2>Search in LinkedIn</h2>
+                <form id="form2">
+                  <div class="row">
+                    <div class="btnWrp">
+                      <img src="assets/srchicon.png" class="icon">
+                      <input type="text" placeholder="Company Name" class ="inputForm" id="pullerInput" autocomplete="off">
+                    </div>
+                    <input type="submit" class="submitForm" id="pullerSubmit" value="Search">
+                  </div>
+              </form>
+              </div>
+            </div>
+            <div class="buffer"></div>
+          </div>
+          
+          <div id="User" class="tabcontent fadeIn">
+            <div class="frame">
+              <div class="tab" id="noUser">
+                <h2><b>Who's using this?</b></h2>
+                <p>Enter your username so we can remember companies you've blacklisted, and uploaded CSV files!</p>
+                <h3><b>Username: </b></h3>
+                <form class="row" id="formUsr">
+                  <div class="lgnWrp">
+                   <input type="text" class ="inputForm" id="inputUsr" autocomplete="off">
+                  </div>
+                  <input type="submit" class="submitUsr" value="Save">
+                </form>
+              </div>
+              <div class="tab" id="LoggedUser">
+                <h2><b>Hello, <span id="username"></span>!</b></h2>
+                <div class="col">
+                  <p><b>Notice: </b>Once logged out all of saved data(blacklisted companies) will be lost</p>
+                  <form>
+                    <input type="submit" class="submitUsr" id="logout" value="Logout">
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="frame">
+              <div class="tab">
+                <h2><b>Load CSV File</b></h2>
+                <p>Upload CSV file of onboarded companies to filter</p>
+                <p><b>Notice: </b>If none are uploaded, the default dataset used will be from local directory</p>
+                <h3><b>Loading File: </b></h3>
+                <div class="row">
+                  <button class="loadBtn"></button>
+                  <div class="loadWrp"><p id="fileDisplay">...</p></div>  
+                  <button class="loadBtn2"></button>     
+                </div> 
+                <div >
+                  <p id="noCSV"></p>
+                  <form class="row" id="fileUpld">
+                    <div class="upldWrp">
+                    <label for="fileInp" class="inputLabel"><img src="/assets/upldicon.png" class="icon">File</label>
+                    <input type="file" class ="inputFile" id="fileInp">
+                    </div>
+                    <input type="submit" value="Upload" class="submitBtn">
+                  </form>
+                </div>
+              </div>
+
+              <div class="tab blist">
+                <h2><b>Blacklist Companies</b></h2>
+                <form class="row" id="bListBtn">
+                  <div class="btnWrp">
+                  <input type="text" class ="inputForm" id="blackList" placeholder="E.g: Turing, Crossover,.." autocomplete="off">
+                  </div>
+                  <input type="submit" class="blistForm" value="Exclude">
+                </form>
+              
+                <div class="row">
+                  <p>Clear blacklist :</p>
+                  <button class="cBlistWrp"><img src="assets/rfrshicon.png" class="icon2"></button>
+                </div>
+             </div>
+            </div>
+            <div class="buffer"></div>
+          </div>
+      </div>
+
+    </body>
+    
+  
