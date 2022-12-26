@@ -3,7 +3,7 @@
 #### Description:
  
 ## Overview & Problems Statement
-Currently I'm an intern at a Vietnamese company as part of the sales division. The main work is approaching hiring companies through many online platforms but mainly LinkedIn to offer them a free trial of our product.
+At the time, I was an intern at a Vietnamese company as part of the sales division. The main work is approaching hiring companies through many online platforms but mainly LinkedIn to offer them a free trial of our product.
  
 Helper OI is a browser extension designed to help me and my colleagues with our job. The first problem to tackle is to help avoid approaching and “onboarding” (register the client to our app) companies who’ve been onboarded before. To do that, the *first feature: LinkedIn Filter+* would be a built-in filter tailored to the DOM tree and inner workings of LinkedIn job search page. It will hide job posts from companies who’ve been onboarded and mark job posts from the companies that have not been on boarded yet. Consequently, this feature also increases efficiency since repeatedly searching in gsheet for company name can be avoided. Additionally, there’s also the *second feature: External Web Filter* which basically have the same function and purpose of the first feature but for other online job posting websites. Of course, it being designed to be applicable for every other website other than LinkedIn does present some drawbacks that will be discussed further later.
  
