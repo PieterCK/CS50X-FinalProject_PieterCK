@@ -70,7 +70,8 @@ Noticeable drawback or downgrade of the External Web Filter is the lack of the O
 The *third feature : HR Puller* is built inside contentScript_PullHR.js file, which employs a familiar method of scrapping the company’s employee list in their LinkedIn profile. It uses the same method in the LILoaded() in contentScript_Search.js file where the function ‘LIScrapper()’ will tag employees in relevant positions as well as hiding the ones that do not. To do that, it follows a simple algorithm: 
  Once fired, the script will look at the first employee on the list. It will check their position description.
 If it includes one or more specified key words(
-> let Valids = ["Human Resource", "HR", "CEO", "Talent", "Co-Founder", "Recruit"])
+> let Valids = ["Human Resource", "HR", "CEO", "Talent", "Co-Founder", "Recruit"]).
+
 It will append a “Pulled” button element to mark that they fit the criteria.
 If it doesn’t, then the script will simply just un-append the parent node of the element.
 If it finds a valid employee, the script will proceed to continue processing the second job post(i + +) and if it hides the previous one it will continue processing for the next employee that filled the position of the previously hidden employee (i stays the same).
